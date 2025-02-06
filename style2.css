@@ -1,0 +1,124 @@
+.html{
+    height: 100%;
+}
+
+.body{
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+/*.header{
+    flex-shrink: 0;
+}
+
+.content{
+    flex-grow: 1;
+}
+
+.footer{    
+    flex-shrink: 0;
+    height: 100px;
+}*/
+body {
+    font-family: Arial, sans-serif; /* Шрифт для всего документа */
+    background-color: #f4f4f4; /* Цвет фона страницы */
+    margin: 0; /* Убираем отступы */
+ /* Добавляем внутренние отступы */
+    font-size: 16px; /* Общий размер шрифта для всего документа */
+}
+
+form {
+    background-color: #fff; /* Цвет фона формы */
+    border-radius: 8px; /* Закругленные углы */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тень для формы */
+    padding: 20px; /* Внутренние отступы формы */
+    max-width: 600px; /* Максимальная ширина формы */
+    margin: auto; /* Центрируем форму */
+}
+
+p {
+    font-weight: bold; /* Жирный шрифт для вопросов */
+    margin: 10px 0; /* Отступы сверху и снизу */
+    font-size: 18px; /* Увеличенный размер шрифта для вопросов */
+}
+
+input[type="radio"] {
+    margin-right: 10px; /* Отступ справа от радиокнопок */
+    transform: scale(1.2); /* Увеличиваем размер радиокнопок */
+}
+
+input[type="radio"]:checked {
+    accent-color: #007bff; /* Цвет выделенной радиокнопки */
+}
+
+input[type="radio"] + br {
+    margin-bottom: 10px; /* Отступ снизу для каждой строки */
+}
+
+input[type="radio"]:hover {
+    cursor: pointer; /* Указатель при наведении на радиокнопки */
+}
+
+.butn {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.butn button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.butn button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+    form {
+        padding: 15px; /* Уменьшаем внутренние отступы на мобильных устройствах */
+    }
+}
+
+#resultModal {
+    display: none; /* По умолчанию скрыто */
+    position: fixed; /* Фиксированное позиционирование */
+    z-index: 1000; /* Высокий z-index, чтобы было поверх всех элементов */
+    left: 0;
+    top: 0;
+    width: 100%; /* На всю ширину */
+    height: 100%; /* На всю высоту */
+    overflow: auto; /* Прокрутка, если контент не помещается */
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Отступ сверху и центрирование */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ширина модального окна */
+    max-width: 600px; /* Максимальная ширина */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
