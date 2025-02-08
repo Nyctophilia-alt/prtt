@@ -473,6 +473,14 @@ a{
     font-size: 1.5rem;
     color: gold;
 }
+
+.raw p {
+    font-size: 2.6rem;
+    color: #ccc;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
 /* ------------------------------------------REVIEW SECTION */
 
 /* ------------------------------------------CONTACT SECTION */
