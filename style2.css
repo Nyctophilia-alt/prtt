@@ -8,18 +8,6 @@
     grid-template-rows: auto 1fr auto;
 }
 
-/*.header{
-    flex-shrink: 0;
-}
-
-.content{
-    flex-grow: 1;
-}
-
-.footer{    
-    flex-shrink: 0;
-    height: 100px;
-}*/
 body {
     font-family: Arial, sans-serif; /* Шрифт для всего документа */
     background-color: #f4f4f4; /* Цвет фона страницы */
@@ -157,44 +145,3 @@ input[type="radio"]:hover {
     text-decoration: none;
     cursor: pointer;
 }
-
-
-
-
-/* Стили для экранов шириной до 768px (мобильные устройства) 
-@media (max-width: 768px) {
-    .header {
-        padding: 10px;
-    }
-
-    .header .logo img {
-        height: 30px;
-    }
-
-    .navbar {
-        top: 50px;
-        right: 10px;
-        width: 150px;
-    }
-
-    .home h3 {
-        font-size: 20px;
-    }
-
-    .home p {
-        font-size: 14px;
-    }
-
-    .btn {
-        padding: 8px 16px;
-        font-size: 14px;
-    }
-
-    .footer .share a {
-        font-size: 20px;
-    }
-
-    .footer .credit {
-        font-size: 12px;
-    }
-}*/
