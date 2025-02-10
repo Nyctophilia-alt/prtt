@@ -88,6 +88,33 @@ input[type="radio"]:hover {
     background-color: #0056b3;
 }
 
+/* Стили для видео */
+.content video {
+    width: 80%; /* Устанавливаем ширину видео на 80% от родительского контейнера */
+    height: auto; /* Высота автоматически подстраивается для сохранения пропорций */
+    max-width: 600px; /* Максимальная ширина видео 600px */
+    margin: 1rem 0; /* Отступы сверху и снизу */
+    border-radius: 8px; /* Закругленные углы для более современного вида */
+}
+
+/* Дополнительные стили для контейнера с видео для улучшения адаптивности */
+.row {
+    display: flex; /* Используем flexbox для выравнивания */
+    flex-direction: column; /* Вертикальное выравнивание */
+    align-items: center; /* Центрируем содержимое */
+    padding: 1rem; /* Внутренние отступы */
+}
+
+/* Стили для параграфов */
+.paragraph p {
+    font-size: 1rem; /* Размер шрифта для текста */
+    line-height: 1.5; /* Межстрочный интервал для удобства чтения */
+    color: #333; /* Цвет текста */
+    margin: 0.5rem 0; /* Отступы между параграфами */
+}
+
+
+
 @media (max-width: 600px) {
     form {
         padding: 15px; /* Уменьшаем внутренние отступы на мобильных устройствах */
@@ -130,3 +157,44 @@ input[type="radio"]:hover {
     text-decoration: none;
     cursor: pointer;
 }
+
+
+
+
+/* Стили для экранов шириной до 768px (мобильные устройства) 
+@media (max-width: 768px) {
+    .header {
+        padding: 10px;
+    }
+
+    .header .logo img {
+        height: 30px;
+    }
+
+    .navbar {
+        top: 50px;
+        right: 10px;
+        width: 150px;
+    }
+
+    .home h3 {
+        font-size: 20px;
+    }
+
+    .home p {
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .footer .share a {
+        font-size: 20px;
+    }
+
+    .footer .credit {
+        font-size: 12px;
+    }
+}*/
