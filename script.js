@@ -7,32 +7,25 @@ const menuBtn = document.querySelector('#menu-btn')
 
 
 
-searchBtn.addEventListener('click', ()=>{
-    searchForm.classList.toggle('active');
-    document.addEventListener('click', (e)=>{
-        if(!e.composedPath().includes(searchBtn) && !e.composedPath().includes(searchForm) ){
-            searchForm.classList.remove('active');
-        }
-    })
-})
 
-cartBtn.addEventListener('click', ()=>{
-    cartItem.classList.toggle('active');
-    document.addEventListener('click', (e)=>{
-        if(!e.composedPath().includes(cartBtn) && !e.composedPath().includes(cartItem) ){
-            cartItem.classList.remove('active');
-        }
-    })
-})
-
-menuBtn.addEventListener('click', ()=>{
+menuBtn.addEventListener('click', () => {
     navbar.classList.toggle('active');
-    document.addEventListener('click', (e)=>{
-        if(!e.composedPath().includes(navbar) && !e.composedPath().includes(menuBtn) ){
-            navbar.classList.remove('active');
-        }
-    })
-})
+
+    // Меняем иконку кнопки меню (опционально)
+    if (navbar.classList.contains('active')) {
+        menuBtn.innerHTML = '<i class="fas fa-times"></i>'; // Иконка "крестик"
+    } else {
+        menuBtn.innerHTML = '<i class="fas fa-bars"></i>'; // Иконка "бургер"
+    }
+});
+
+// Закрываем меню при клике вне его области
+document.addEventListener('click', (e) => {
+    if (!navbar.contains(e.target) && !menuBtn.contains(e.target)) {
+        navbar.classList.remove('active');
+        menuBtn.innerHTML = '<i class="fas fa-bars"></i>'; // Возвращаем иконку "бургер"
+    }
+});
 
 function summary() {
   let questions = document.querySelectorAll('.question p'); // Все вопросы

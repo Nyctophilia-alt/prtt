@@ -696,9 +696,31 @@ a{
         padding: 0.5rem;
         font-size: 2rem;
     }
+
+    .header {
+        padding: 15px 5%;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #444;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .buttons {
+        display: block;
+    }
 }
-
-
 
 @media (max-width: 768px){
     html{
