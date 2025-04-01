@@ -280,7 +280,7 @@ a{
 
 .home {
     position: relative; /* Убедитесь, что .home имеет относительное позиционирование */
-    min-height: 100vh;
+    min-height: 120vh;
     background: url(./image/photo_2025-01-30_21-06-49.jpg) no-repeat;
     background-size: cover;
     background-position: center;
@@ -728,9 +728,150 @@ a{
     }
 }
 
+/* Стили для кнопки меню */
+/* Стили для кнопки меню */
+#menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Фиксированная ширина */
+    height: 40px; /* Фиксированная высота */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0; /* Убираем внутренние отступы */
+    margin: 0; /* Убираем внешние отступы */
+    position: relative; /* Для корректного позиционирования */
+    z-index: 1000;
+}
 
+#menu-btn i {
+    font-size: 24px; /* Размер иконки */
+    color: #fff; /* Цвет иконки */
+    position: absolute; /* Абсолютное позиционирование иконки */
+    top: 50%; /* Центрируем иконку по вертикали */
+    left: 50%; /* Центрируем иконку по горизонтали */
+    transform: translate(-50%, -50%); /* Точное центрирование */
+}
 
+/* Медиа-запросы для мобильной версии */
+@media (max-width: 768px) {
+    #menu-btn {
+        width: 30px; /* Уменьшаем размер кнопки для мобильных устройств */
+        height: 30px;
+    }
 
+    #menu-btn i {
+        font-size: 20px; /* Уменьшаем размер иконки */
+    }
 
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 100%;
+        max-width: 300px;
+        display: none; /* Скрываем меню по умолчанию */
+        flex-direction: column;
+        padding: 10px;
+    }
 
-/* ------------------------------------------RESPONSIVE SECTION */
+    .navbar.active {
+        display: flex; /* Показываем меню при активации */
+    }
+
+    .navbar a {
+        margin: 10px 0; /* Отступы между пунктами меню */
+        font-size: 18px;
+        color: #fff;
+    }
+}
+.hero-and-timer {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 3;
+    width: 400px;
+}
+
+.hero-of-the-day {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+#war-timer {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.timer-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timer-item span:first-child {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.timer-item span:last-child {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    .home .content {
+        width: 90%;
+        margin: 150px auto 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .hero-and-timer {
+        position: static;
+        width: 90%;
+        margin: 2rem auto 0;
+        transform: none;
+        top: auto;
+        right: auto;
+    }
+
+    .hero-of-the-day,
+    #war-timer {
+        width: 100%;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #war-timer {
+        margin-top: 0;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+    .timer-item span:first-child {
+        font-size: 2.5rem;
+    }
+    
+    .timer-item span:last-child {
+        font-size: 1.2rem;
+    }
+}

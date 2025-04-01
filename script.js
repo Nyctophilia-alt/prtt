@@ -146,3 +146,471 @@ function summary() {
         }
     };
 }
+function updateWarTimer() {
+    const endDate = new Date('1945-05-09T00:00:00'); // Дата окончания войны
+    const now = new Date();
+
+    // Разница в миллисекундах
+    const diff = now - endDate;
+
+    // Расчет лет, дней, часов
+    const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24) % 365);
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+
+    // Обновление DOM
+    document.getElementById('years').textContent = years;
+    document.getElementById('days').textContent = days;
+    document.getElementById('hours').textContent = hours;
+}
+
+// Обновляем сразу при загрузке и каждую секунду
+updateWarTimer();
+setInterval(updateWarTimer, 1000);
+const heroes = [
+    {
+        name: "Зоя Космодемьянская",
+        link: "https://ru.wikipedia.org/wiki/Космодемьянская,_Зоя_Анатольевна"
+    },
+    {
+        name: "Александр Матросов",
+        link: "https://ru.wikipedia.org/wiki/Матросов,_Александр_Матвеевич"
+    },
+    {
+        name: "Иван Панфилов",
+        link: "https://ru.wikipedia.org/wiki/Панфилов,_Иван_Васильевич"
+    },
+    {
+        name: "Николай Гастелло",
+        link: "https://ru.wikipedia.org/wiki/Гастелло,_Николай_Францевич"
+    },
+    {
+        name: "Людмила Павличенко",
+        link: "https://ru.wikipedia.org/wiki/Павличенко,_Людмила_Михайловна"
+    },
+    {
+        name: "Василий Зайцев",
+        link: "https://ru.wikipedia.org/wiki/Зайцев,_Василий_Григорьевич"
+    },
+    {
+        name: "Алексей Маресьев",
+        link: "https://ru.wikipedia.org/wiki/Маресьев,_Алексей_Петрович"
+    },
+    {
+        name: "Константин Рокоссовский",
+        link: "https://ru.wikipedia.org/wiki/Рокоссовский,_Константин_Константинович"
+    },
+    {
+        name: "Георгий Жуков",
+        link: "https://ru.wikipedia.org/wiki/Жуков,_Георгий_Константинович"
+    },
+    {
+        name: "Иван Черняховский",
+        link: "https://ru.wikipedia.org/wiki/Черняховский,_Иван_Данилович"
+    },
+    {
+        name: "Мелитон Кантария",
+        link: "https://ru.wikipedia.org/wiki/Кантария,_Мелитон_Варламович"
+    },
+    {
+        name: "Михаил Егоров",
+        link: "https://ru.wikipedia.org/wiki/Егоров,_Михаил_Алексеевич_(знаменосец)"
+    },
+    {
+        name: "Алия Молдагулова",
+        link: "https://ru.wikipedia.org/wiki/Молдагулова,_Алия_Нурмухамбетовна"
+    },
+    {
+        name: "Маншук Маметова",
+        link: "https://ru.wikipedia.org/wiki/Маметова,_Маншук"
+    },
+    {
+        name: "Вера Хоружая",
+        link: "https://ru.wikipedia.org/wiki/Хоружая,_Вера_Захаровна"
+    },
+    {
+        name: "Виктор Талалихин",
+        link: "https://ru.wikipedia.org/wiki/Талалихин,_Виктор_Васильевич"
+    },
+    {
+        name: "Рихард Зорге",
+        link: "https://ru.wikipedia.org/wiki/Зорге,_Рихард"
+    },
+    {
+        name: "Василий Клочков",
+        link: "https://ru.wikipedia.org/wiki/Клочков,_Василий_Георгиевич"
+    },
+    {
+        name: "Мария Октябрьская",
+        link: "https://ru.wikipedia.org/wiki/Октябрьская,_Мария_Васильевна"
+    },
+    {
+        name: "Пётр Гаврилов",
+        link: "https://ru.wikipedia.org/wiki/Гаврилов,_Пётр_Михайлович"
+    },
+    {
+        name: "Иван Кожедуб",
+        link: "https://ru.wikipedia.org/wiki/Кожедуб,_Иван_Никитович"
+    },
+    {
+        name: "Александр Покрышкин",
+        link: "https://ru.wikipedia.org/wiki/Покрышкин,_Александр_Иванович"
+    },
+    {
+        name: "Валентина Гризодубова",
+        link: "https://ru.wikipedia.org/wiki/Гризодубова,_Валентина_Степановна"
+    },
+    {
+        name: "Дмитрий Лавриненко",
+        link: "https://ru.wikipedia.org/wiki/Лавриненко,_Дмитрий_Фёдорович"
+    },
+    {
+        name: "Зиновий Колобанов",
+        link: "https://ru.wikipedia.org/wiki/Колобанов,_Зиновий_Григорьевич"
+    },
+    {
+        name: "Александр Герман",
+        link: "https://ru.wikipedia.org/wiki/Герман,_Александр_Викторович"
+    },
+    {
+        name: "Николай Кузнецов",
+        link: "https://ru.wikipedia.org/wiki/Кузнецов,_Николай_Иванович_(разведчик)"
+    },
+    {
+        name: "Павел Гудзь",
+        link: "https://ru.wikipedia.org/wiki/Гудзь,_Павел_Данилович"
+    },
+    {
+        name: "Сидор Ковпак",
+        link: "https://ru.wikipedia.org/wiki/Ковпак,_Сидор_Артемьевич"
+    },
+    {
+        name: "Александр Печерский",
+        link: "https://ru.wikipedia.org/wiki/Печерский,_Александр_Аронович"
+    },
+    {
+        name: "Олег Кошевой",
+        link: "https://ru.wikipedia.org/wiki/Кошевой,_Олег_Васильевич"
+    },
+    {
+        name: "Ульяна Громова",
+        link: "https://ru.wikipedia.org/wiki/Громова,_Ульяна_Матвеевна"
+    },
+    {
+        name: "Любовь Шевцова",
+        link: "https://ru.wikipedia.org/wiki/Шевцова,_Любовь_Григорьевна"
+    },
+    {
+        name: "Сергей Тюленин",
+        link: "https://ru.wikipedia.org/wiki/Тюленин,_Сергей_Гаврилович"
+    },
+    {
+        name: "Иван Туркенич",
+        link: "https://ru.wikipedia.org/wiki/Туркенич,_Иван_Васильевич"
+    },
+    {
+        name: "Василий Коробков",
+        link: "https://ru.wikipedia.org/wiki/Коробков,_Василий_Федосеевич"
+    },
+    {
+        name: "Владимир Дегтярев",
+        link: "https://ru.wikipedia.org/wiki/Дегтярёв,_Владимир_Иванович"
+    },
+    {
+        name: "Екатерина Зеленко",
+        link: "https://ru.wikipedia.org/wiki/Зеленко,_Екатерина_Ивановна"
+    },
+    {
+        name: "Лидия Литвяк",
+        link: "https://ru.wikipedia.org/wiki/Литвяк,_Лидия_Владимировна"
+    },
+    {
+        name: "Мария Байда",
+        link: "https://ru.wikipedia.org/wiki/Байда,_Мария_Карповна"
+    },
+    {
+        name: "Анна Егорова",
+        link: "https://ru.wikipedia.org/wiki/Егорова,_Анна_Александровна"
+    },
+    {
+        name: "Николай Сиротинин",
+        link: "https://ru.wikipedia.org/wiki/Сиротинин,_Николай_Владимирович"
+    },
+    {
+        name: "Пётр Ильичёв",
+        link: "https://ru.wikipedia.org/wiki/Ильичёв,_Пётр_Иванович"
+    },
+    {
+        name: "Григорий Бахчиванджи",
+        link: "https://ru.wikipedia.org/wiki/Бахчиванджи,_Григорий_Яковлевич"
+    },
+    {
+        name: "Михаил Девятаев",
+        link: "https://ru.wikipedia.org/wiki/Девятаев,_Михаил_Петрович"
+    },
+    {
+        name: "Василий Маргелов",
+        link: "https://ru.wikipedia.org/wiki/Маргелов,_Василий_Филиппович"
+    },
+    {
+        name: "Александр Мамкин",
+        link: "https://ru.wikipedia.org/wiki/Мамкин,_Александр_Петрович"
+    },
+    {
+        name: "Яков Павлов",
+        link: "https://ru.wikipedia.org/wiki/Павлов,_Яков_Федотович"
+    },
+    {
+        name: "Иван Флёров",
+        link: "https://ru.wikipedia.org/wiki/Флёров,_Иван_Андреевич"
+    },
+    {
+        name: "Владимир Микоян",
+        link: "https://ru.wikipedia.org/wiki/Микоян,_Владимир_Анастасович"
+    },
+    {
+        name: "Николай Кузнецов (разведчик)",
+        link: "https://ru.wikipedia.org/wiki/Кузнецов,_Николай_Иванович_(разведчик)"
+    },
+    {
+        name: "Александр Шумилов",
+        link: "https://ru.wikipedia.org/wiki/Шумилов,_Александр_Иванович_(генерал)"
+    },
+    {
+        name: "Василий Ардашев",
+        link: "https://ru.wikipedia.org/wiki/Ардашев,_Василий_Иванович"
+    },
+    {
+        name: "Иван Баграмян",
+        link: "https://ru.wikipedia.org/wiki/Баграмян,_Иван_Христофорович"
+    },
+    {
+        name: "Андрей Власов",
+        link: "https://ru.wikipedia.org/wiki/Власов,_Андрей_Андреевич"
+    },
+    {
+        name: "Семён Будённый",
+        link: "https://ru.wikipedia.org/wiki/Будённый,_Семён_Михайлович"
+    },
+    {
+        name: "Климент Ворошилов",
+        link: "https://ru.wikipedia.org/wiki/Ворошилов,_Климент_Ефремович"
+    },
+    {
+        name: "Михаил Катуков",
+        link: "https://ru.wikipedia.org/wiki/Катуков,_Михаил_Ефимович"
+    },
+    {
+        name: "Родион Малиновский",
+        link: "https://ru.wikipedia.org/wiki/Малиновский,_Родион_Яковлевич"
+    },
+    {
+        name: "Кирилл Мерецков",
+        link: "https://ru.wikipedia.org/wiki/Мерецков,_Кирилл_Афанасьевич"
+    },
+    {
+        name: "Василий Чуйков",
+        link: "https://ru.wikipedia.org/wiki/Чуйков,_Василий_Иванович"
+    },
+    {
+        name: "Александр Василевский",
+        link: "https://ru.wikipedia.org/wiki/Василевский,_Александр_Михайлович"
+    },
+    {
+        name: "Николай Ватутин",
+        link: "https://ru.wikipedia.org/wiki/Ватутин,_Николай_Фёдорович"
+    },
+    {
+        name: "Фёдор Толбухин",
+        link: "https://ru.wikipedia.org/wiki/Толбухин,_Фёдор_Иванович"
+    },
+    {
+        name: "Леонид Говоров",
+        link: "https://ru.wikipedia.org/wiki/Говоров,_Леонид_Александрович"
+    },
+    {
+        name: "Иван Конев",
+        link: "https://ru.wikipedia.org/wiki/Конев,_Иван_Степанович"
+    },
+    {
+        name: "Андрей Ерёменко",
+        link: "https://ru.wikipedia.org/wiki/Ерёменко,_Андрей_Иванович"
+    },
+    {
+        name: "Павел Ротмистров",
+        link: "https://ru.wikipedia.org/wiki/Ротмистров,_Павел_Алексеевич"
+    },
+    {
+        name: "Исса Плиев",
+        link: "https://ru.wikipedia.org/wiki/Плиев,_Исса_Александрович"
+    },
+    {
+        name: "Сергей Горшков",
+        link: "https://ru.wikipedia.org/wiki/Горшков,_Сергей_Георгиевич"
+    },
+    {
+        name: "Арсений Ворожейкин",
+        link: "https://ru.wikipedia.org/wiki/Ворожейкин,_Арсений_Васильевич"
+    },
+    {
+        name: "Пётр Шурухин",
+        link: "https://ru.wikipedia.org/wiki/Шурухин,_Пётр_Иванович"
+    },
+    {
+        name: "Николай Крылов",
+        link: "https://ru.wikipedia.org/wiki/Крылов,_Николай_Иванович"
+    },
+    {
+        name: "Иван Якубовский",
+        link: "https://ru.wikipedia.org/wiki/Якубовский,_Иван_Игнатьевич"
+    },
+    {
+        name: "Павел Батицкий",
+        link: "https://ru.wikipedia.org/wiki/Батицкий,_Павел_Фёдорович"
+    },
+    {
+        name: "Сергей Ахромеев",
+        link: "https://ru.wikipedia.org/wiki/Ахромеев,_Сергей_Фёдорович"
+    },
+    {
+        name: "Дмитрий Устинов",
+        link: "https://ru.wikipedia.org/wiki/Устинов,_Дмитрий_Фёдорович"
+    },
+    {
+        name: "Семён Тимошенко",
+        link: "https://ru.wikipedia.org/wiki/Тимошенко,_Семён_Константинович"
+    },
+    {
+        name: "Борис Шапошников",
+        link: "https://ru.wikipedia.org/wiki/Шапошников,_Борис_Михайлович"
+    },
+    {
+        name: "Алексей Антонов",
+        link: "https://ru.wikipedia.org/wiki/Антонов,_Алексей_Иннокентьевич"
+    },
+    {
+        name: "Михаил Сомов",
+        link: "https://ru.wikipedia.org/wiki/Сомов,_Михаил_Михайлович"
+    },
+    {
+        name: "Александр Новиков",
+        link: "https://ru.wikipedia.org/wiki/Новиков,_Александр_Александрович_(маршал)"
+    },
+    {
+        name: "Фёдор Шаманов",
+        link: "https://ru.wikipedia.org/wiki/Шаманов,_Фёдор_Андреевич"
+    },
+    {
+        name: "Иван Исаков",
+        link: "https://ru.wikipedia.org/wiki/Исаков,_Иван_Степанович"
+    },
+    {
+        name: "Николай Герасимов",
+        link: "https://ru.wikipedia.org/wiki/Герасимов,_Николай_Семёнович"
+    },
+    {
+        name: "Михаил Наумов",
+        link: "https://ru.wikipedia.org/wiki/Наумов,_Михаил_Иванович"
+    },
+    {
+        name: "Сергей Грицевец",
+        link: "https://ru.wikipedia.org/wiki/Грицевец,_Сергей_Иванович"
+    },
+    {
+        name: "Григорий Кравченко",
+        link: "https://ru.wikipedia.org/wiki/Кравченко,_Григорий_Пантелеевич"
+    },
+    {
+        name: "Сергей Денисов",
+        link: "https://ru.wikipedia.org/wiki/Денисов,_Сергей_Прокофьевич"
+    },
+    {
+        name: "Павел Рычагов",
+        link: "https://ru.wikipedia.org/wiki/Рычагов,_Павел_Васильевич"
+    },
+    {
+        name: "Яков Смушкевич",
+        link: "https://ru.wikipedia.org/wiki/Смушкевич,_Яков_Владимирович"
+    },
+    {
+        name: "Фёдор Полетаев",
+        link: "https://ru.wikipedia.org/wiki/Полетаев,_Фёдор_Андрианович"
+    },
+    {
+        name: "Пётр Вершигора",
+        link: "https://ru.wikipedia.org/wiki/Вершигора,_Пётр_Петрович"
+    },
+    {
+        name: "Александр Чекалин",
+        link: "https://ru.wikipedia.org/wiki/Чекалин,_Александр_Павлович"
+    },
+    {
+        name: "Владимир Мигуля",
+        link: "https://ru.wikipedia.org/wiki/Мигуля,_Владимир_Георгиевич"
+    },
+    {
+        name: "Григорий Чухрай",
+        link: "https://ru.wikipedia.org/wiki/Чухрай,_Григорий_Наумович"
+    },
+    {
+        name: "Сергей Бондарчук",
+        link: "https://ru.wikipedia.org/wiki/Бондарчук,_Сергей_Фёдорович"
+    },
+    {
+        name: "Константин Симонов",
+        link: "https://ru.wikipedia.org/wiki/Симонов,_Константин_Михайлович"
+    },
+    {
+        name: "Александр Твардовский",
+        link: "https://ru.wikipedia.org/wiki/Твардовский,_Александр_Трифонович"
+    },
+    {
+        name: "Михаил Шолохов",
+        link: "https://ru.wikipedia.org/wiki/Шолохов,_Михаил_Александрович"
+    },
+    {
+        name: "Василий Лебедев-Кумач",
+        link: "https://ru.wikipedia.org/wiki/Лебедев-Кумач,_Василий_Иванович"
+    },
+    {
+        name: "Александр Довженко",
+        link: "https://ru.wikipedia.org/wiki/Довженко,_Александр_Петрович"
+    },
+    {
+        name: "Сергей Эйзенштейн",
+        link: "https://ru.wikipedia.org/wiki/Эйзенштейн,_Сергей_Михайлович"
+    },
+    {
+        name: "Михаил Ромм",
+        link: "https://ru.wikipedia.org/wiki/Ромм,_Михаил_Ильич"
+    },
+    {
+        name: "Иван Пырьев",
+        link: "https://ru.wikipedia.org/wiki/Пырьев,_Иван_Александрович"
+    },
+    {
+        name: "Григорий Александров",
+        link: "https://ru.wikipedia.org/wiki/Александров,_Григорий_Васильевич"
+    }
+];
+function showRandomHero() {
+    if (heroes.length === 0) {
+        console.error('Массив heroes пуст!');
+        return;
+    }
+    
+    const randomIndex = Math.floor(Math.random() * heroes.length);
+    const hero = heroes[randomIndex];
+    
+    const nameElement = document.getElementById('hero-name');
+    const linkElement = document.getElementById('hero-link');
+    
+    if (!nameElement || !linkElement) {
+        console.error('Элементы hero-name или hero-link не найдены в DOM!');
+        return;
+    }
+    
+    nameElement.textContent = hero.name;
+    linkElement.href = hero.link;
+}
+showRandomHero();
