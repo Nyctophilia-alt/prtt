@@ -279,51 +279,45 @@ a{
 /* ------------------------------------------HOME SECTION */
 
 .home {
-    position: relative; /* Убедитесь, что .home имеет относительное позиционирование */
-    min-height: 120vh;
-    background: url(./image/photo_2025-01-30_21-06-49.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
-    margin-top: -134px;
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url(./image/photo_2025-01-30_21-06-49.jpg) no-repeat center center/cover;
     display: flex;
     align-items: center;
-    overflow: hidden; /* Убирает прокрутку, если это необходимо */
+    justify-content: center;
+    padding: 2rem;
+    margin-top: -134px;
+    overflow: hidden;
+    padding-bottom: 50px; /* Добавлен отступ снизу */
 }
 
-.home::before {
-    content: '';
-    position: absolute; /* Абсолютное позиционирование для наложения */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Черный цвет с 50% прозрачностью */
-    z-index: 1; /* Убедитесь, что наложение находится под содержимым */
-}
-
-.home > * {
-    position: relative; /* Убедитесь, что все дочерние элементы имеют относительное позиционирование */
-    z-index: 2; /* Убедитесь, что дочерние элементы находятся над наложением */
-}
-
-
-.home .content{
+.home .content {
     max-width: 60rem;
-}
-
-.home .content h3{
-    font-size: 6rem;
+    text-align: center;
     color: #fff;
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out;
+    transform: translateY(80px); /* Опускаем контент */
+    margin-bottom: 50px; /* Дополнительный отступ снизу */
 }
 
-.home .content p{
-    font-size: 2rem;
+.home .content h3 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    line-height: 1.2;
+}
+
+.home .content p {
+    font-size: 1.8rem;
     font-weight: 300;
-    line-height: 1.8;
-    padding: 1rem 0;
-    color: #fff;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
-
 /* ------------------------------------------HOME SECTION */
 
 /* ------------------------------------------MENU SECTION */
