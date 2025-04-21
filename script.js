@@ -80,64 +80,13 @@ document.addEventListener('click', (e) => {
 
 
 function summary() {
-    console.log("Функция summary() вызвана");
+    console.log("Функция summary() вызвана"); // Отладка
 
     let questions = document.querySelectorAll('.question p'); // Все вопросы
     let score = 0; // Количество верных ответов
-    
-    // Правильные ответы (ID правильных вариантов для каждого вопроса)
-    const rightAnswers = [
-        "a_1", // вопрос1 (22 июня 1941 года)
-        "b_1", // вопрос2 (Ленинград)
-        "c_1", // вопрос3 (Иосиф Сталин)
-        "d_1", // вопрос4 (Сталинградская битва)
-        "e_1", // вопрос5 (Операция "Багратион")
-        "f_1", // вопрос6 (Георгий Жуков)
-        "g_1", // вопрос7 (Москва)
-        "h_1", // вопрос8 (Т-34)
-        "i_1", // вопрос9 (Крымский фронт)
-        "j_1", // вопрос10 (США, Великобритания)
-        "k_1", // вопрос11 (1944 год)
-        "l_1", // вопрос12 (Орел)
-        "m_1", // вопрос13 (План "Барбаросса")
-        "n_1", // вопрос14 (Центральный фронт)
-        "o_1", // вопрос15 (Берлин)
-        "p_1", // вопрос16 (9 мая 1945 года)
-        "q_1", // вопрос17 (Сталинградский фронт)
-        "r_1", // вопрос18 (Минск)
-        "s_1", // вопрос19 (1941 год)
-        "t_1", // вопрос20 (1-й Белорусский фронт)
-        "u_1", // вопрос21 (Ленинград)
-        "v_1", // вопрос22 (1944 год)
-        "w_1", // вопрос23 (1-й Украинский фронт)
-        "x_1", // вопрос24 (Сталинград)
-        "y_1", // вопрос25 (1943 год)
-        "z_1", // вопрос26 (1-й Белорусский фронт)
-        "aa_1", // вопрос27 (Орел)
-        "ab_1", // вопрос28 (1944 год)
-        "ac_1", // вопрос29 (2-й Украинский фронт)
-        "ad_1", // вопрос30 (Харьков)
-        "ae_1", // вопрос31 (1944 год)
-        "af_1", // вопрос32 (3-й Украинский фронт)
-        "ag_1", // вопрос33 (Кишинев)
-        "ah_1", // вопрос34 (1944 год)
-        "ai_1", // вопрос35 (3-й Белорусский фронт)
-        "aj_1", // вопрос36 (Варшава)
-        "ak_1", // вопрос37 (1944 год)
-        "al_1", // вопрос38 (1-й Белорусский фронт)
-        "am_1", // вопрос39 (Кенигсберг)
-        "an_1", // вопрос40 (1945 год)
-        "ao_1", // вопрос41 (1-й Украинский фронт)
-        "ap_1", // вопрос42 (Прага)
-        "aq_1", // вопрос43 (1945 год)
-        "ar_1", // вопрос44 (2-й Украинский фронт)
-        "as_1", // вопрос45 (Будапешт)
-        "at_1", // вопрос46 (1945 год)
-        "au_1", // вопрос47 (3-й Украинский фронт)
-        "av_1", // вопрос48 (Вена)
-        "aw_1", // вопрос49 (1945 год)
-        "ax_1"  // вопрос50 (1-й Белорусский фронт)
-    ];
+    let rightAnswers = ["a_2", "b_1", "c_1", "d_1", "e_1", "f_1", "g_1", "h_1", "i_1", "j_1", "k_1", "l_1", "m_1", "n_1", "o_1", "p_1", "q_1", "r_1", "s_1", "t_1", "u_1", "v_1", "w_1", "x_1", "y_1", "z_1", "aa_1", "ab_1", "ac_1", "ad_1", "ae_1", "af_1", "ag_1", "ah_1", "ai_1", "aj_1", "ak_1", "al_1", "am_1", "an_1", "ao_1", "ap_1", "aq_1", "ar_1", "as_1", "at_1", "au_1", "av_1", "aw_1", "ax_1"]; // Список верных ответов
+
+
 
     // Проверка ответов пользователя и отображение объяснений
     questions.forEach((question, index) => {
@@ -153,29 +102,11 @@ function summary() {
             if (chosenAnswer.id === rightAnswers[index]) {
                 score++;
                 chosenAnswer.parentElement.style.color = 'green'; // Подсветка правильного ответа пользователя
-                
-                // Найдем правильный ответ и подсветим его зеленым (на случай, если пользователь выбрал неправильный)
-                const correctAnswer = document.getElementById(rightAnswers[index]);
-                if (correctAnswer) {
-                    correctAnswer.parentElement.style.color = 'green';
-                }
             } else {
                 chosenAnswer.parentElement.style.color = 'red'; // Подсветка неправильного ответа пользователя
-                
-                // Подсветим правильный ответ зеленым
-                const correctAnswer = document.getElementById(rightAnswers[index]);
-                if (correctAnswer) {
-                    correctAnswer.parentElement.style.color = 'green';
-                }
             }
         } else {
             question.style.color = 'red'; // Подсветка, если ответа нет
-            
-            // Подсветим правильный ответ зеленым
-            const correctAnswer = document.getElementById(rightAnswers[index]);
-            if (correctAnswer) {
-                correctAnswer.parentElement.style.color = 'green';
-            }
         }
     });
 
@@ -215,82 +146,23 @@ function summary() {
         }
     };
 }
+function updateWarTimer() {
+    const endDate = new Date('1945-05-09T00:00:00'); // Дата окончания войны
+    const now = new Date();
 
+    // Разница в миллисекундах
+    const diff = now - endDate;
 
-    // Проверка ответов пользователя и отображение объяснений
-    questions.forEach((question, index) => {
-        let chosenAnswer = document.querySelector(`input[name="вопрос${index + 1}"]:checked`);
-        let explanationDiv = document.getElementById(`explanation${index + 1}`); // Контейнер для объяснения
+    // Расчет лет, дней, часов
+    const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24) % 365);
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
 
-        if (explanationDiv) {
-            explanationDiv.textContent = explanations[index]; // Добавляем объяснение
-            explanationDiv.style.display = 'block'; // Показываем объяснение
-        }
-
-        if (chosenAnswer) {
-            if (chosenAnswer.id === rightAnswers[index]) {
-                score++;
-                chosenAnswer.parentElement.style.color = 'green'; // Подсветка правильного ответа пользователя
-            } else {
-                chosenAnswer.parentElement.style.color = 'red'; // Подсветка неправильного ответа пользователя
-            }
-        } else {
-            question.style.color = 'red'; // Подсветка, если ответа нет
-        }
-    });
-
-    // Вычисление оценки
-    let grade;
-    if (score >= 45) {
-        grade = '5';
-    } else if (score >= 35) {
-        grade = '4';
-    } else if (score >= 25) {
-        grade = '3';
-    } else {
-        grade = '2';
-    }
-
-    // Отображение результата
-    let resultModal = document.getElementById('resultModal');
-    let resultText = document.getElementById('resultText');
-    let closeModal = document.querySelector('.close');
-
-    if (resultModal && resultText) {
-        resultText.textContent = `Ваш результат: ${score} из ${questions.length}. Оценка: ${grade}`;
-        resultModal.style.display = 'block';
-    } else {
-        console.error("Элементы модального окна не найдены!"); // Отладка
-    }
-
-    if (closeModal) {
-        closeModal.onclick = function() {
-            resultModal.style.display = 'none';
-        };
-    }
-
-    window.onclick = function(event) {
-        if (event.target === resultModal) {
-            resultModal.style.display = 'none';
-        }
-    }   
-    function updateWarTimer() {
-        const endDate = new Date('1945-05-09T00:00:00'); // Дата окончания войны
-        const now = new Date();
-
-        // Разница в миллисекундах
-        const diff = now - endDate;
-
-        // Расчет лет, дней, часов
-        const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
-        const days = Math.floor((diff / (1000 * 60 * 60 * 24)) % 365);
-        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-
-        // Обновление DOM
-        document.getElementById('years').textContent = years;
-        document.getElementById('days').textContent = days;
-        document.getElementById('hours').textContent = hours;
-    }
+    // Обновление DOM
+    document.getElementById('years').textContent = years;
+    document.getElementById('days').textContent = days;
+    document.getElementById('hours').textContent = hours;
+}
 
 // Обновляем сразу при загрузке и каждую секунду
 updateWarTimer();
@@ -723,25 +595,22 @@ const heroes = [
 ];
 function showRandomHero() {
     if (heroes.length === 0) {
-        document.getElementById('hero-name').textContent = "Нет данных о героях";
+        console.error('Массив heroes пуст!');
         return;
     }
     
     const randomIndex = Math.floor(Math.random() * heroes.length);
     const hero = heroes[randomIndex];
     
-    document.getElementById('hero-name').textContent = hero.name;
-    document.getElementById('hero-link').href = hero.link;
+    const nameElement = document.getElementById('hero-name');
+    const linkElement = document.getElementById('hero-link');
+    
+    if (!nameElement || !linkElement) {
+        console.error('Элементы hero-name или hero-link не найдены в DOM!');
+        return;
+    }
+    
+    nameElement.textContent = hero.name;
+    linkElement.href = hero.link;
 }
-
-// Инициализация при загрузке страницы
-window.onload = function() {
-    updateWarTimer();
-    showRandomHero();
-    
-    // Обновляем таймер каждую секунду
-    setInterval(updateWarTimer, 1000);
-    
-    // Обновляем героя каждые 10 секунд (по желанию)
-    // setInterval(showRandomHero, 10000);
-};
+showRandomHero();
