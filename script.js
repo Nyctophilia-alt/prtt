@@ -273,24 +273,24 @@ function summary() {
         if (event.target === resultModal) {
             resultModal.style.display = 'none';
         }
+    }   
+    function updateWarTimer() {
+        const endDate = new Date('1945-05-09T00:00:00'); // Дата окончания войны
+        const now = new Date();
+
+        // Разница в миллисекундах
+        const diff = now - endDate;
+
+        // Расчет лет, дней, часов
+        const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+        const days = Math.floor((diff / (1000 * 60 * 60 * 24)) % 365);
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+
+        // Обновление DOM
+        document.getElementById('years').textContent = years;
+        document.getElementById('days').textContent = days;
+        document.getElementById('hours').textContent = hours;
     }
-function updateWarTimer() {
-    const endDate = new Date('1945-05-09T00:00:00'); // Дата окончания войны
-    const now = new Date();
-
-    // Разница в миллисекундах
-    const diff = now - endDate;
-
-    // Расчет лет, дней, часов
-    const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24) % 365);
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-
-    // Обновление DOM
-    document.getElementById('years').textContent = years;
-    document.getElementById('days').textContent = days;
-    document.getElementById('hours').textContent = hours;
-}
 
 // Обновляем сразу при загрузке и каждую секунду
 updateWarTimer();
@@ -723,22 +723,25 @@ const heroes = [
 ];
 function showRandomHero() {
     if (heroes.length === 0) {
-        console.error('Массив heroes пуст!');
+        document.getElementById('hero-name').textContent = "Нет данных о героях";
         return;
     }
     
     const randomIndex = Math.floor(Math.random() * heroes.length);
     const hero = heroes[randomIndex];
     
-    const nameElement = document.getElementById('hero-name');
-    const linkElement = document.getElementById('hero-link');
-    
-    if (!nameElement || !linkElement) {
-        console.error('Элементы hero-name или hero-link не найдены в DOM!');
-        return;
-    }
-    
-    nameElement.textContent = hero.name;
-    linkElement.href = hero.link;
+    document.getElementById('hero-name').textContent = hero.name;
+    document.getElementById('hero-link').href = hero.link;
 }
-showRandomHero();
+
+// Инициализация при загрузке страницы
+window.onload = function() {
+    updateWarTimer();
+    showRandomHero();
+    
+    // Обновляем таймер каждую секунду
+    setInterval(updateWarTimer, 1000);
+    
+    // Обновляем героя каждые 10 секунд (по желанию)
+    // setInterval(showRandomHero, 10000);
+};
